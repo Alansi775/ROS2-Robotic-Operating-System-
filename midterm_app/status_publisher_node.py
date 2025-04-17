@@ -10,7 +10,7 @@ class WeatherPublisher(Node):
     def __init__(self):
         super().__init__('status_publisher')  # Initialize the node with the name 'status_publisher'
         self.publisher_ = self.create_publisher(String, 'weather', 10)  # Create a publisher on the this topic
-        self.timer = self.create_timer(5.0, self.publish_weather)  # we are setting a timer to call publish_status every 2 seconds
+        self.timer = self.create_timer(5.0, self.publish_weather)  # we are setting a timer to call publish_status every 5 seconds
         self.weather_conditions = ['Robot is moving', 'Robot is idle', 'Charging', 'Warning: Obstacle detected', 'System shutdown']  # List of robot status conditions
 
     def publish_weather(self):
